@@ -13,7 +13,7 @@ enum QuestType {
     case explore(location: String)
     case treasure(size: Int)
     
-    var totalSteps: Int {
+    var reward: Int {
         switch self {
             case .journey(let value): return 100
             case .target(let value): return 100
@@ -22,7 +22,7 @@ enum QuestType {
         }
     }
     
-    var reward: Int {
+    var totalSteps: Int {
         switch self {
             case .journey(let value): if (value == "Local") {return 3} else {return 5}
             case .target(let value): return 4
